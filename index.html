@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palavras Cruzadas Sênior</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>Palavras Cruzadas</h1>
+            <p class="subtitle">Um jogo para exercitar a mente</p>
+            <div class="score-timer-container">
+                <div class="score-box">
+                    <span>Pontuação:</span>
+                    <div class="score" id="score">0</div>
+                </div>
+                <div class="timer-container">
+                    <div class="timer" id="timer">30:00</div>
+                    <button id="pause-btn" class="large-button" aria-label="Pausar o cronômetro">Pausar</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="clue-section">
+            <h3>Dica Atual:</h3>
+            <p id="current-clue" class="current-clue">Selecione uma palavra para ver a dica</p>
+        </div>
+        
+        <div class="game-board-container">
+            <div class="game-board" id="board"></div>
+        </div>
+        
+        <div class="controls">
+            <button id="hint-btn" class="large-button" aria-label="Mostrar uma letra como dica">Mostrar Letra</button>
+            <button id="check-btn" class="large-button" aria-label="Verificar as respostas">Verificar</button>
+            <button id="help-btn" class="large-button" aria-label="Abrir o modal de ajuda">Ajuda</button>
+        </div>
+        
+        <div class="direction-toggle">
+            <button id="across-btn" class="direction-btn active">Horizontal</button>
+            <button id="down-btn" class="direction-btn">Vertical</button>
+        </div>
+        
+        <div class="keyboard-container">
+            <div class="keyboard" id="keyboard"></div>
+            <div class="special-keys">
+                <button id="delete-btn" class="special-key">Apagar</button>
+                <button id="next-cell-btn" class="special-key">Próxima</button>
+            </div>
+        </div>
+
+        <!-- Modal de Ajuda -->
+        <div id="help-modal" class="modal" role="dialog" aria-labelledby="help-modal-title" aria-hidden="true">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="help-modal-title">Como Jogar</h2>
+                <ol>
+                    <li>Toque em uma célula para selecioná-la</li>
+                    <li>Leia a dica que aparece na tela</li>
+                    <li>Use o teclado para inserir letras</li>
+                    <li>Cada letra correta vale 10 pontos</li>
+                    <li>Cada palavra completa vale 50 pontos bônus</li>
+                    <li>Toque em "Mostrar Letra" se precisar de ajuda (custa 30 segundos)</li>
+                    <li>Toque em "Verificar" para conferir suas respostas</li>
+                    <li>Use "Próxima" para avançar para a próxima célula</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
